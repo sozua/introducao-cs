@@ -1,5 +1,8 @@
-temperaturaFahrenheit = input('Digite uma temperatura em Fahrenheit: ')
+tempoDeJogo = int(input("Quanto tempo temos já jogado? "))
 
-temperaturaCelsius = (float(temperaturaFahrenheit) - 32) * 5 / 9
-
-print("A temperatura em Celsius é: ", temperaturaCelsius)
+if tempoDeJogo <= 90:
+    print('Ainda tem jogo pela frente')
+    print('Que bom, eu adoro futebol')
+else:
+    print("Putz, tá acabando o jogo")
+    print("Apita logo, juíz!")
