@@ -1,12 +1,15 @@
-valorInicial = int(input("Digite o número a ter seus dígitos somados: "))
-valorAtual = valorInicial
-somaFinal = 0
+def fatorial(valorInicial):
+    valorTemporario = valorInicial
+    valorFinal = 1
+    while valorTemporario != 0:
+        valorFinal = valorFinal * valorTemporario
+        valorTemporario = valorTemporario - 1
+    return valorFinal
 
-while valorAtual != -1:
-    if valorAtual <= 9:
-        somaFinal = somaFinal + valorAtual
-        valorAtual = -1
-    else:
-        somaFinal = somaFinal + (valorAtual % 10)
-        valorAtual = valorAtual // 10
-print("O resultado final dessa soma é:", somaFinal)
+def coeficienteBinomial(numerador, denominador):
+    return fatorial(numerador) / (fatorial(denominador) * (fatorial(numerador - denominador)))
+
+numerador = int(input("Digite o valor do numerador do coeficiente binomial: "))
+denominador = int(input("Digite o valor do denominador do coeficiente binomial: "))
+
+print("O valor final do coeficiente binomial é:", coeficienteBinomial(numerador, denominador))
