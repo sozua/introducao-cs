@@ -1,8 +1,5 @@
-tempoDeJogo = int(input("Quanto tempo temos já jogado? "))
+i = 0
 
-if tempoDeJogo <= 90:
-    print('Ainda tem jogo pela frente')
-    print('Que bom, eu adoro futebol')
-else:
-    print("Putz, tá acabando o jogo")
-    print("Apita logo, juíz!")
+while i <= 10:
+    print(2 ** i)
+    i = i +1;
