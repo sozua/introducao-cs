@@ -1,15 +1,21 @@
-def fatorial(valorInicial):
-    valorTemporario = valorInicial
-    valorFinal = 1
-    while valorTemporario != 0:
-        valorFinal = valorFinal * valorTemporario
-        valorTemporario = valorTemporario - 1
-    return valorFinal
+def calcFatorial(n):
+    i = 1
+    total = 1
+    while i <= n:
+        total = total * i
+        i = i + 1
+    return total
 
-def coeficienteBinomial(numerador, denominador):
-    return fatorial(numerador) / (fatorial(denominador) * (fatorial(numerador - denominador)))
 
-numerador = int(input("Digite o valor do numerador do coeficiente binomial: "))
-denominador = int(input("Digite o valor do denominador do coeficiente binomial: "))
+def main():
+    sequencia = input(
+        "Digite uma sequência de números para ser calculado os seus fatoriais: ")
+    numbersSplit = sequencia.split()
+    i = 0
+    while i < len(numbersSplit):
+        numero = int(numbersSplit[i])
+        print("Fatorial de", numero, "é", calcFatorial(numero))
+        i = i + 1
 
-print("O valor final do coeficiente binomial é:", coeficienteBinomial(numerador, denominador))
+
+main()
