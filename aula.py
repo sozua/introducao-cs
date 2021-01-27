@@ -1,5 +1,10 @@
-i = 0
+linha = 1
+coluna = 1
 
-while i <= 10:
-    print(2 ** i)
-    i = i +1;
+while linha <= 10:
+    while coluna <= 10:
+        print(linha * coluna, end="\t")
+        coluna = coluna + 1
+    print()
+    linha = linha + 1
+    coluna = 1
