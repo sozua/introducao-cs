@@ -1,21 +1,13 @@
-def calcFatorial(n):
-    i = 1
-    total = 1
-    while i <= n:
-        total = total * i
-        i = i + 1
-    return total
+n = int(input("Digite um número inteiro >1: "))
 
+fator = 2
+multiplicidade = 0
 
-def main():
-    sequencia = input(
-        "Digite uma sequência de números para ser calculado os seus fatoriais: ")
-    numbersSplit = sequencia.split()
-    i = 0
-    while i < len(numbersSplit):
-        numero = int(numbersSplit[i])
-        print("Fatorial de", numero, "é", calcFatorial(numero))
-        i = i + 1
-
-
-main()
+while n > 1:
+    while n % fator == 0:
+        multiplicidade = multiplicidade + 1
+        n = n / fator
+    if multiplicidade != 0:
+        print("Fator:", fator, ", Multiplicidade:", multiplicidade)
+    fator = fator + 1
+    multiplicidade = 0
