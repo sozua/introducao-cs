@@ -1,10 +1,7 @@
-linha = 1
-coluna = 1
+frutasExoticas = ['Jabuticaba', "Capuaçu", 'Graviola']
 
-while linha <= 10:
-    while coluna <= 10:
-        print(linha * coluna, end="\t")
-        coluna = coluna + 1
-    print()
-    linha = linha + 1
-    coluna = 1
+# for fruta in frutasExoticas:
+#     print(fruta)
+
+for item in range(1000, 2000, 50):
+    print(item)
