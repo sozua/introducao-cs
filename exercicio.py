@@ -1,13 +1,15 @@
-n = int(input("Digite um número inteiro >1: "))
+def minMax(array):
+    minima = 0
+    maxima = 0
+    for temperatura in array:
+        if temperatura < minima:
+            minima = temperatura
+        if temperatura > maxima:
+            maxima = temperatura
 
-fator = 2
-multiplicidade = 0
+    print("A menor temperatura desse mês foi:", minima)
+    print("A maior temperatura desse mês foi:", maxima)
 
-while n > 1:
-    while n % fator == 0:
-        multiplicidade = multiplicidade + 1
-        n = n / fator
-    if multiplicidade != 0:
-        print("Fator:", fator, ", Multiplicidade:", multiplicidade)
-    fator = fator + 1
-    multiplicidade = 0
+
+temperaturas = [12, 32, 23, 43, -1, 2, 4]
+minMax(temperaturas)
