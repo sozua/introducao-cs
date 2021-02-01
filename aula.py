@@ -14,15 +14,22 @@ def criarMatriz(linhas, colunas, valor):
     return matriz
 
 
-def soma_matrizes(a, b):
-    num_linhas = len(a)
-    num_col = len(a[0])
-    c = criarMatriz(num_linhas, num_col, 0)
-    for lin in range(num_linhas):
-        for col in range(num_col):
-            c[lin][col] = a[lin][col] + b[lin][col]
+def multiplicar_matrizes(a, b):
+    num_linhas_a, num_colunas_a, = len(a), len(a[0])
+    num_linhas_b, num_colunas_b, = len(b), len(b[0])
+    assert num_colunas_a == num_linhas_b
+
+    c = []
+    for linha in range(num_linhas_a):
+        c.append([])
+        for coluna in range(num_colunas_b):
+            c[linha].append(0)
+            for k in range(num_colunas_a):
+                c[linha][coluna] += a[linha][k] * b[k][coluna]
     return c
 
 
-print(soma_matrizes([[1, 2, 3], [4, 5, 6], [7, 8, 9]],
-                    [[9, 8, 7], [6, 5, 4], [3, 2, 1]]))
+arrayA = [[1, 2, 3], [4, 5, 6]]
+arrayB = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+arrayC = multiplicar_matrizes(arrayA, arrayB)
+print(arrayC)
